@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class Diccionario : MonoBehaviour
 {
+    public string currencyToSearch;
     // Start is called before the first frame update
     void Start()
     {
-        Dictionary<char, string> diccionario = new Dictionary<char, string>();
-        diccionario.Add('€' , 'Euro');
-        diccionario.Add('$' , 'Dollar'):
-        diccionario.Add('¥', 'Yen');
+        Dictionary<string , char> diccionario = new Dictionary<string, char>();
+        diccionario.Add("euro" , '€');
+        diccionario.Add("dollar", '$');
+        diccionario.Add("yen", '¥');
+
+        if(diccionario.ContainsKey(currencyToSearch.ToLower())) // para sacarlo usamos el containskey , el toLower es para pasarlo todo a minuscula y toUpper para mayusculas
+        {
+            print(diccionario[currencyToSearch.ToLower()]);
+        }
+        else
+        {
+            Debug.LogError("No contiene esa key");
+        }
     }
 
     // Update is called once per frame

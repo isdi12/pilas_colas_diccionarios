@@ -41,7 +41,7 @@ public class Colas : MonoBehaviour
 
             Queue<int> auxQueue = queue1;
                 queue1  = queue2;
-            queue2 = auxQueue; 
+                queue2 = auxQueue; 
         }
 
         while(originalQueue.Count > 0)
